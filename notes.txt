@@ -1,0 +1,23 @@
+its a frame work
+it uses v8 java script engine
+node js is not a programming language
+its a java script run time
+v8=> no idea about file system
+window & glabal
+document & process => all properties and method
+why should i learn node js
+-new backend technology
+-netflix uber also uses
+-event driven non blocking io
+
+
+blocking i/o and non blocking i/o
+-> waiting for response and move forward
+
+
+
+
+
+
+
+
