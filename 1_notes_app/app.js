@@ -10,9 +10,9 @@
 // console.log(validator.isURL('https:/hii.io'));
 
 // Importing module
-import { red } from 'chalk';
+import chalk from 'chalk';
 
 // Printing the text
-console.log(red("aayush"))
-console.log(red.underline("aayush"))
+console.log(chalk.red("aayush"))
+console.log(chalk.green.bold.dim.inverse("aayush"))
 //console.log(red.underline.bold("GFG"))
