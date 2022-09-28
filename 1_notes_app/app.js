@@ -24,6 +24,7 @@ import chalk from "chalk";
 import { argv } from "process";
 import yargs from "yargs";
 
+
 //const yargs=require ("yargs");
 
 
@@ -36,4 +37,14 @@ import yargs from "yargs";
 // }
 console.log(process.argv);
 console.log(yargs(process.argv.slice(2)).argv);
-
+//const {hideBin} = require('yargs/helpers')
+//add, remove, read,list
+//create add
+yargs(hideBin(process.argv)).command({
+    command:'add',
+    describe:'Add a new note',
+    handler:function(){
+        console.log('Adding new notes')
+    }
+}).parse()
+console.log('yargs.argv')
