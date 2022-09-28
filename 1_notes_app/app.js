@@ -19,10 +19,10 @@
 // console.log(process.argv2);
 // // //console.log(red.underline.bold("GFG"))
 
-console.log(process.argv[3]);
-import chalk from "chalk";
-import { argv } from "process";
-import yargs from "yargs";
+// console.log(process.argv[3]);
+// import chalk from "chalk";
+// import { argv } from "process";
+
 
 
 //const yargs=require ("yargs");
@@ -35,16 +35,69 @@ import yargs from "yargs";
 // }else if(command==='remove'){
 //     console.log("removing note");
 // }
-console.log(process.argv);
-console.log(yargs(process.argv.slice(2)).argv);
+// console.log(process.argv);
+// console.log(yargs(process.argv.slice(2)).argv);
 //const {hideBin} = require('yargs/helpers')
 //add, remove, read,list
 //create add
-yargs(hideBin(process.argv)).command({
-    command:'add',
-    describe:'Add a new note',
-    handler:function(){
-        console.log('Adding new notes')
+// yargs(hideBin(process.argv)).command({
+//     command:'add',
+//     describe:'Add a new note',
+//     handler:function(){
+//         console.log('Adding new notes')
+//     }
+// }).parse()
+// console.log('yargs.argv')
+
+
+const yargs = require('yargs')
+
+//adding a note
+yargs.command({
+    command: "add",
+    describe:"Add a new note",
+    builder:{
+        title:{
+            describe: "Note title"
+        }
+    },
+    handler: function(argv){
+        console.log("Adding a new note",argv)
     }
-}).parse()
-console.log('yargs.argv')
+
+})
+//removing a note
+yargs.command({
+    command: "remove",
+    describe:"remove a note",
+    
+    handler: function(){
+        console.log("remove a note")
+    }
+
+})
+
+yargs.command({
+    command: "list",
+    describe:"list note",
+    
+    handler: function(){
+        console.log("Listing all notes")
+    }
+
+})
+
+yargs.command({
+    command: "read",
+    describe:"reading note",
+    
+    handler: function(){
+        console.log("reading a note")
+    }
+
+})
+
+
+console.log(yargs.argv.title);
+
+
