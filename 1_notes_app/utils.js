@@ -1,11 +1,17 @@
-console.log('utils.js');
+// // console.log('utils.js');
 
-const name="raj";
+// // const name="raj";
 
-const add=function(a,b){
-    return a+b;
-}
+// // const add=function(a,b){
+// //     return a+b;
+// // }
 
 
 
-module.exports=add;
+// // module.exports=add;
+
+// const note= function(){
+//     return "Your notes...";
+// }
+
+// module.exports=note;
