@@ -69,6 +69,7 @@ yargs.command({
         }
     },
     handler: function(argv){
+        console.log("title is:  ",argv.title)
         console.log("body is:  ",argv.body)
     }
 
