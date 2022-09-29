@@ -51,7 +51,7 @@
 
 
 const yargs = require('yargs')
-
+const notes=require('./notes.js')
 
 //adding a note
 yargs.command({
