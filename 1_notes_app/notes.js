@@ -43,16 +43,16 @@ const addNotes=function(title,body){
         return note.title==title;
 
     })
-    console.log(duplicateNotes);
+    //console.log(duplicateNotes);
     if(duplicateNotes.length==0){
         notes.push({
             title:title,
             body:body
         })
         saveNotes(notes);
-        console.log("New note added");
+        console.log(chalk.green.inverse("New note added"));
     }else{
-        console.log("Title already taken");
+        console.log(chalk.red.inverse("Title already taken"));
     }
     
     
