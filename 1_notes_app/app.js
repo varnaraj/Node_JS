@@ -90,7 +90,7 @@ yargs.command({
     
     handler: function(argv){
 
-        notes
+        notes.removeNotes(argv.title);
     }
 
 })

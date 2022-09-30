@@ -29,7 +29,10 @@
    
 // yargs.parse() // To set above changes
 
+
+const chalk=require("chalk")
 const fs=require("fs");
+const { exit } = require("process");
 const getNotes=function(){
     return "Your notes";
 }
@@ -40,6 +43,7 @@ const addNotes=function(title,body){
         return note.title==title;
 
     })
+    console.log(duplicateNotes);
     if(duplicateNotes.length==0){
         notes.push({
             title:title,
@@ -56,8 +60,33 @@ const addNotes=function(title,body){
 
 
 const removeNotes=function(title){
+    const notes=loadNotes();
+    const notestoKeep= notes.filter(function(note){
+        return note.title!==title;
+    })
+
+    if(notes.length>notestoKeep.length){
+        console.log(chalk.green.inverse("Note removed"))
+        saveNotes(notestoKeep);
+    }else{
+        console.log(chalk.red.inverse("No notes found"))
+    }
     
+    // for(let i=0;i<notes.length;i++){
+    //     console.log(notes[i].title);
+    //     if(notes[i].title===title){
+            
+    //         const dataJSON2=JSON.stringify(notes);
+    //         fs.writeFileSync("notes.json",dataJSON2)
+    //         //console.log(notes[i]);
+    //         break;
+    //     }
+    // }
+    
+    
+
 }
+
 
 
 const saveNotes=function(notes){
@@ -78,5 +107,6 @@ const loadNotes= function(){
 
 module.exports={
     getNotes:getNotes,
-    addNotes:addNotes
+    addNotes:addNotes,
+    removeNotes:removeNotes
 }
