@@ -32,17 +32,14 @@
 
 const chalk=require("chalk")
 const fs=require("fs");
-const { exit } = require("process");
-const getNotes=function(){
+
+const getNotes=()=>{
     return "Your notes";
 }
 
-const addNotes=function(title,body){
+const addNotes=(title,body)=>{
     const notes = loadNotes();
-    const duplicateNotes= notes.filter(function(note){
-        return note.title===title;
-
-    })
+    const duplicateNotes= notes.filter((note)=>note.title===title)
     //console.log(duplicateNotes);
     if(duplicateNotes.length==0){
         notes.push({
@@ -59,9 +56,9 @@ const addNotes=function(title,body){
 }
 
 
-const removeNotes=function(title){
+const removeNotes=(title)=>{
     const notes=loadNotes();
-    const notestoKeep= notes.filter(function(note){
+    const notestoKeep= notes.filter((note)=>{
         return note.title!==title;
     })
 
