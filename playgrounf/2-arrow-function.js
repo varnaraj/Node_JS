@@ -8,13 +8,14 @@
 // console.log(square(4))
 
 const event={
-    name: "birthday",
+    name: "birthday party",
     guestList:['varnaa','mike','raj'],
     
     printGuestList(){
+        
         console.log("guest list for "+ this.name)
-        this.guestList.forEach(function(guest){
-            console.log(guest)
+        this.guestList.forEach((guest)=>{
+            console.log(guest+' is attending '+ this.name)
         })
     }
     
