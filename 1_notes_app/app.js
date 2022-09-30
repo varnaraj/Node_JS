@@ -70,8 +70,9 @@ yargs.command({
         }
     },
     handler: function(argv){
-        console.log("title is:  ",argv.title)
-        console.log("body is:  ",argv.body)
+        //console.log(argv.title);
+        notes.addNotes(argv.title,argv.body);
+        
     }
 
 })
@@ -79,9 +80,17 @@ yargs.command({
 yargs.command({
     command: "remove",
     describe:"remove a note",
+    builder:{
+        title:{
+            describe: "Note title have to delete",
+            demandOption: true,
+            type:'string'
+        }
+    },
     
-    handler: function(){
-        console.log("remove a note")
+    handler: function(argv){
+
+        notes
     }
 
 })
