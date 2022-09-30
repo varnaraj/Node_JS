@@ -40,7 +40,7 @@ const getNotes=function(){
 const addNotes=function(title,body){
     const notes = loadNotes();
     const duplicateNotes= notes.filter(function(note){
-        return note.title==title;
+        return note.title===title;
 
     })
     //console.log(duplicateNotes);
