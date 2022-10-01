@@ -50,7 +50,8 @@
 // console.log('yargs.argv')
 
 
-const yargs = require('yargs')
+const yargs = require('yargs');
+const { listNotes } = require('./notes.js');
 const notes=require('./notes.js')
 
 //adding a note
@@ -103,7 +104,8 @@ yargs.command({
     describe:"list note",
     
     handler(){
-        console.log("Listing all notes")
+        notes.listNotes();
+      //  console.log("Listing all notes")
     }
 
 })
