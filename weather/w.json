@@ -1,0 +1,41 @@
+{
+    "request": {
+        "type": "LatLon",
+        "query": "Lat 9.66 and Lon 80.03",
+        "language": "en",
+        "unit": "m"
+    },
+    "location": {
+        "name": "Chundikkuli",
+        "country": "Sri Lanka",
+        "region": "Northern Province",
+        "lat": "9.656",
+        "lon": "80.031",
+        "timezone_id": "Asia\/Colombo",
+        "localtime": "2022-10-02 21:55",
+        "localtime_epoch": 1664747700,
+        "utc_offset": "5.50"
+    },
+    "current": {
+        "observation_time": "04:25 PM",
+        "temperature": 28,
+        "weather_code": 176,
+        "weather_icons": [
+            "https:\/\/assets.weatherstack.com\/images\/wsymbols01_png_64\/wsymbol_0025_light_rain_showers_night.png"
+        ],
+        "weather_descriptions": [
+            "Patchy rain possible"
+        ],
+        "wind_speed": 35,
+        "wind_degree": 203,
+        "wind_dir": "SSW",
+        "pressure": 1007,
+        "precip": 0.7,
+        "humidity": 82,
+        "cloudcover": 83,
+        "feelslike": 32,
+        "uv_index": 1,
+        "visibility": 9,
+        "is_day": "no"
+    }
+}
