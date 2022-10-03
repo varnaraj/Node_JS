@@ -1,4 +1,5 @@
 const request=require('request');
+const geocode=require("./utils/geocode.js")
 
 
 // const url="http://api.weatherstack.com/current?access_key=c1c76a4d1c54c17505a50cb32882694d&query=&units=f";
@@ -33,23 +34,9 @@ const request=require('request');
     
 // })
 
-const geocode=(address,callback)=>{
-    
-    const url="https://api.mapbox.com/geocoding/v5/mapbox.places/"+encodeURIComponent(address)+".json?access_token=pk.eyJ1IjoidmFybmFyYWoiLCJhIjoiY2w4c2FwMHJrMGZkZTN3cWo4cDF6ZWo1ayJ9.JA-_n3C7ifsCOL69DoeOdA&limit=1"
-    //console.log(url)
-    request({url:url,json:true},(error,response)=>{
-        //console.log(response.body.features.length)
-        if(error){
-            callback("unable to connect",undefined)
-        }else if(response.body.features.length===0){
-          //  callback("unable to find location , Try an other search",undefined)
-        }else{
-            console.log(response.body.features[0].center[0])
-        }
-    })
-}
 
-geocode("india",(error,data)=>{
+
+geocode("akbar, kandy",(error,data)=>{
     console.log("error: "+error);
-    console.log("Data",data)
+    console.log("Data",data.location)
 })
