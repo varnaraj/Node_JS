@@ -1,21 +1,43 @@
+
 const path=require("path")
 const express=require("express")
-const { isAbsolute } = require("path")
+const hbs=require("hbs")
 console.log(__dirname)
 
 
 const app=express()
-const publicDirectoryPath=path.join(__dirname,"..","public")
 
+//define paths for express config
+const publicDirectoryPath=path.join(__dirname,"..","/public")    //or we can use "../public"
+const viewsPath=path.join(__dirname,"..","/template/views")
+const partialPaths=path.join(__dirname,"../template/partials")
+
+
+
+//setup handle bar engine and views location
 app.set("view engine","hbs")
+app.set("views",viewsPath)
+hbs.registerPartials(partialPaths)
 
+
+
+
+//setup static deirectory for save
 app.use(express.static(publicDirectoryPath))
+
+
 app.get("",(req,res)=>{
+    
+
     res.render('index',{
         title:"weatherT",
+        req_name:"piriyaraj",
         name:"varnaraj"
     })
 })
+
+
+
 // app.get("",(req,res)=>{
 //     res.send("Hello everyone")
 // })
@@ -29,7 +51,8 @@ app.get("/about",(req,res)=>{
 
 app.get("/help",(req,res)=>{
     res.render("help",{
-        its:"Help page"
+        its:"Help page",
+        name:"help page"
     })
 })
 
