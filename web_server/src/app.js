@@ -38,6 +38,7 @@ app.get("",(req,res)=>{
 
 
 
+
 // app.get("",(req,res)=>{
 //     res.send("Hello everyone")
 // })
@@ -49,11 +50,25 @@ app.get("/about",(req,res)=>{
     })
 })
 
+
 app.get("/help",(req,res)=>{
     res.render("help",{
         its:"Help page",
         name:"help page"
     })
+})
+
+app.get("/help/*",(req,res)=>{
+    res.render(("herror"))
+    
+})
+
+
+
+app.get("*",(req,res)=>{
+    // res.send("MY 404 PAGE")
+    res.render("error")
+
 })
 
 app.listen(3000,()=>{
